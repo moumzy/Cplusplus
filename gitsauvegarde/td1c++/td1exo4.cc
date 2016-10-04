@@ -6,17 +6,17 @@ class Point {
 		double x;
 		double y;
 	public: 
-		Point()
+		Point()						//Constructeur
 		 {
 			 this->x = 0;
 			 this->y = 0;
 		 }
-		 Point(double x, double y)
+		 Point(double x, double y)	// Constructeur
 		 {
 			 this->x = x;
 			 this->y = y;
 		 }
-		 Point(const Point& p)
+		 Point(const Point& p)		// Constructeur
 			{
 			 this->x = p.getx();
 			 this->y = p.gety();

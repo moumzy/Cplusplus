@@ -76,39 +76,47 @@ public:
   ~Cstring(){
     cout << " Le destructeur fonctionne" << endl;
   }
+  
+  Cstring& operator =(Cstring aff)				//voir poly 54/56
+	{
+		strcpy(str, aff.getChaine());
+		taille = aff.getTaille();
+		return *this;
+	}
+
+  
+  
+  
+  
 private:
   char* str;
   int taille;
   //static int nbr;
 
 };
+	
 
-class Definition{
-public:
-
-  Definition(const char* ch1, const char* ch2){
-    mot = Cstring(ch1);
-    def = Cstring(ch2);
-  }
-  const char* getDef()const{
-    return this -> def.getChaine();
-  }
-
-  const char* getMot()const{
-    return this -> mot.getChaine();
-  }
-
-  ~Definition(){
-    cout << "destruction definition" << endl;
-  }
-
-private:
-  Cstring mot;
-  Cstring def;
-};
 
 int main()
 {
-  Definition Thomas ("Thomas" , "Surfeur");
-  cout << "La definition de " << Thomas.getMot() << " est " << Thomas.getDef() << endl;
+  
 }
+
+
+//DEBUT TD2 
+
+
+bool operator >(Cstring a , Cstring b)
+	{
+		return b.plusGrandQue(a);
+	}
+
+bool operator <=(Cstring a , Cstring b)
+	{
+		return b.infOuEgale(a);
+	}
+	
+Cstring operator +(Cstring a , Cstring b)
+	{
+		return a.plus(b);
+	}
